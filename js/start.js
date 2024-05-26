@@ -28,10 +28,11 @@ function goNext(qIdx){
 
 function begin(){
     setTimeout(() => {
-        //에니메이션
-        //애니메이션
+        main.style.WebkitAnimation="fadeout 1s";
+        main.style.animation="fadeout 1s";
         setTimeout(() => {
-            
+            qna.style.WebkitAnimation="fadein 1s";
+            qna.style.animation="fadein 1s";
             main.style.display="none";
             qna.stlye.display="block";
         },450);
