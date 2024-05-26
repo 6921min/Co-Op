@@ -8,14 +8,19 @@ function addAnswer(answerText,qIdx){
     a.appendChild(answer);
     answer.innerHTML=answerText;
     
+    answer.addEventListener("click",function(){
+        var children = document.querySelectorAll('.answerList');
+        for(let i=0;i<children.length;i++){
+            children[i].disabled=true;
+            children[i].style.display='none';
+        }
+    },false);
     
 }
 function goNext(qIdx){
     var q=document.querySelector('q.Box');
-    q.innerHTML=qnaList[qIdx].q;
-    for(let i in qnaList[qIdx].a){
-        addAnswer(qnaList[qIdx].a[i].answer,qIdx);
-    }
+    q.innerHTML=qnaList[0].q;
+    
 }
 function begin(){
     main.style.WebkitAnimation="fadeout 1s";
