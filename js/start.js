@@ -3,6 +3,7 @@ const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 
 const endPoint =12;
+const selct=[];
 
 
 function goResult(){
@@ -13,12 +14,13 @@ function goResult(){
         result.style.animation="fadein 1s";
         setTimeout(() => {        
             qna.style.display="none";
-            result.stlye.display="block";
-        },450);
-    },450);
+            result.stlye.display="block"
+        },450)})
+
+        console.log(select);
 }
 
-function addAnswer(answerText,qIdx) {
+function addAnswer(answerText,qIdx,idx) {
     var a=document.querySelector('.answerBox');
     var answer=document.createElement('button');
     answer.classList.add('answerList');
@@ -31,7 +33,13 @@ function addAnswer(answerText,qIdx) {
             children[i].disabled='true';
             children[i].style.display='none';
         }
-        goNext(++qIdx);
+        
+        setTimeout(()=>{
+            //for(let i=0;i<children.length;i++){
+            //    children[i].stylee.display='none';
+            //}
+            goNext(++qIdx);
+        },450)
     },false);
 }
 
@@ -40,7 +48,7 @@ function goNext(qIdx){
     var q=document.querySelector('.qBox');
     q.innerHTML=qnaList[qIdx].q;
     for(let i in qnaList[qIdx].a){
-        addAnswer(qnaList[qIdx].a[i].answer,qIdx);
+        addAnswer(qnaList[qIdx].a[i].answer,qIdx,i);
     }
 }
 
