@@ -11,6 +11,7 @@
     <link rel="stylesheet"  href="./css/default.css">
     <link rel="stylesheet"  href="./css/main.css">
     <link rel="stylesheet"  href="./css/qna.css">
+    <link rel="stylesheet"  href="./css/result.css">
     <link rel="stylesheet"  href="./css/animation.css">
 
     
@@ -24,7 +25,8 @@
             </div>
             
             <p>(플레이버 텍스트)</p>
-            <buton type="button" class="btn btn-outline-danger mt-3" onclick="js:begin()">설문시작</buton>
+            <buton type="button" class="btn btn-outline-danger mt-3"
+            onclick="js:begin()">설문시작</buton>
           
         </section> 
         <section id="qna">
@@ -36,7 +38,16 @@
             </div>
         </section>
         
-        <section id="result"></section>
+        <section id="result">
+            <h1 class="pt-5">당신의 결과는:</h1>
+            <div class="resultname"></div>
+
+            <div id="resultImg" class="col-lg-6 col-md-6 col-sm-6 col-12 mx-auto"></div>
+            
+            <div class="resultDesc"></div>
+
+            <buton type="button">공유하기</buton>
+        </section>
         <script src="./js/data.js" charset="utf-8"></script>
         <script src="./js/start.js" charset="utf-8"></script>
       </div>
