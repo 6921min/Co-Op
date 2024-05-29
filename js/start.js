@@ -1,6 +1,6 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
-const result= document.querySelector("#resutl");
+const result= document.querySelector("#result");
 const endPoint =12;
 
 
@@ -35,7 +35,7 @@ function addAnswer(answerText,qIdx) {
 }
 
 function goNext(qIdx){
-    if(++qIdx===endPoint){goResult();}
+    if(qIdx+1===endPoint){goResult();}
     var q=document.querySelector('.qBox');
     q.innerHTML=qnaList[qIdx].q;
     for(let i in qnaList[qIdx].a){
