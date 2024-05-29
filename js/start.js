@@ -1,21 +1,9 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
-const result= document.querySelector("#result");
+
 const endPoint =12;
 
 
-function goResult(){
-    qna.style.WebkitAnimation="fadeout 1s";
-    qna.style.animation="fadeout 1s";
-    setTimeout(() => {
-        result.style.WebkitAnimation="fadein 1s";
-        result.style.animation="fadein 1s";
-        setTimeout(() => {        
-            qna.style.display="none";
-            result.stlye.display="block";
-        },450);
-    },450);
-}
 
 function addAnswer(answerText,qIdx) {
     var a=document.querySelector('.answerBox');
@@ -35,7 +23,7 @@ function addAnswer(answerText,qIdx) {
 }
 
 function goNext(qIdx){
-    if(qIdx+1===endPoint){goResult();}
+    
     var q=document.querySelector('.qBox');
     q.innerHTML=qnaList[qIdx].q;
     for(let i in qnaList[qIdx].a){
